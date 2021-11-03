@@ -1,0 +1,9 @@
+# Steps to run a new case:
+
+1. Run prepare.sh to copy namelists into each case directory.
+
+2. Run `julia tools/setbegendtime.jl --nml --beg-year --end-year`
+   to setup the beg and end time.
+
+3. Run `julia tools/setpickup.jl --pickup-src-dir --pickup-dst-dir --pickup-year --deltaT`
+   to copy the correct pickup files into case directory.

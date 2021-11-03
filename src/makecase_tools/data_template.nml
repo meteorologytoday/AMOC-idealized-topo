@@ -1,0 +1,76 @@
+! Model parameters
+! Continuous equation parameters
+ &PARM01
+ viscAh=50000.,
+ viscAr=1.E-3,
+ no_slip_sides=.TRUE.,
+ no_slip_bottom=.FALSE.,
+ diffKhT=1000.,
+ diffKrT=1.E-4,
+ diffKhS=1000.,
+ diffKrS=1.E-4,
+ ivdc_kappa=1.,
+ implicitDiffusion=.TRUE.,
+ eosType='LINEAR',
+ tRef=24*15.,
+ sRef=24*35.,
+ tAlpha=2.0E-4,
+ sBeta=7.4E-4,
+ rhoNil=1000.0,
+ gravity=9.81,
+ rigidLid=.FALSE.,
+ implicitFreeSurface=.TRUE.,
+ exactConserv=.TRUE.,
+ saltStepping=.TRUE.,
+! readBinaryPrec=32,
+! writeBinaryPrec=32,
+ balanceEmPmR=.TRUE.,
+ balancePrintMean=.FALSE.,
+ &
+
+! Elliptic solver parameters
+ &PARM02
+ cg2dTargetResidual=1.E-7,
+ cg2dMaxIters=1000,
+ &
+
+! Time stepping parameters
+ &PARM03
+! startTime=0.,
+! year 3290, pickup file 85276800
+ startTime=102332160000., 
+! startTime=3110400000.,
+! endTime=12000.,
+ deltaT=1200.,
+ pChkptFreq=311040000.,
+ chkptFreq=155520000.,
+ dumpFreq=311040000.,
+ monitorFreq=2592000.,
+ monitorSelect=2,
+!-for longer run (4000 yrs)
+ endTime = 124416000000.,
+ monitorFreq=31104000.,
+! salt relaxation = 10 days
+ tauThetaClimRelax=864000.,
+! salt relaxation = 1000 years (360 days per year)
+ tauSaltClimRelax=31104000000.,
+ &
+
+! Gridding parameters
+ &PARM04
+ usingSphericalPolarGrid=.TRUE.,
+! dxSpacing=2.,
+! dySpacing=2.,
+ delX=32*2.,
+ delY=32*2.,
+ xgOrigin=-2.,
+ ygOrigin=8.,
+ delR=50.,60.,70.,80.,90.,100.,110.,120.,130.,140.,150.,160.,170.,180.,190.,200.,210.,220.,230.,240.,250.,260.,270.,280.,
+ &
+
+ &PARM05
+ bathyFile='bathy.bin',
+ thetaClimFile='SST.bin',
+ saltClimFile='SSS.bin',
+ EmPmRFile='EmPmR.bin',
+ &

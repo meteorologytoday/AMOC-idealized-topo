@@ -1,0 +1,10 @@
+
+Experiment flow
+
+1. Generate a series of forcing files. Each lives in a separate "run" folder.
+2. Generate a series of data in that lives in each "run" folder. Update: no, they can be the same.
+3. A program that copy pickup files into target run folder and modify corresponding startTime.
+
+
+
+
